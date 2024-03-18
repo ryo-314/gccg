@@ -51,12 +51,12 @@
 <div class="container">
   <h2 class="input-label">色名またはカラーコード<br>（カラーコードの場合は # をつけてください）</h2>
   <input type="text" id="colorInput" class="input-field" placeholder="色名またはカラーコード">
-  <button onclick="replaceColor()" class="btn">置換</button>
+  <button onclick="generateColorText()" class="btn">生成</button>
   <div id="result" class="result"></div>
 </div>
 
 <script>
-function replaceColor() {
+function generateColorText() {
   var htmlString = "<ͣolor=#カラーコード>text</ͣolor>";
   var colorInput = document.getElementById("colorInput").value;
   var newColorCode;
@@ -106,7 +106,8 @@ function replaceColor() {
 
   var pattern = /<ͣolor=#カラーコード>(.*?)<\/ͣolor>/;
   var replacedString = htmlString.replace(pattern, '<ͣolor=' + newColorCode + '>$1</ͣolor>');
-  document.getElementById("result").innerHTML = "置換前: " + htmlString + "<br>置換後: " + replacedString;
+  var finalString = replacedString.replace('#カラーコード', newColorCode) + '&lt;/ͣolor&gt;';
+  document.getElementById("result").innerHTML = finalString;
 }
 </script>
 
