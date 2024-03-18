@@ -44,6 +44,9 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+  .image-container {
+    text-align: center; /* 画像を中央に配置 */
+  }
 </style>
 </head>
 <body>
@@ -53,6 +56,11 @@
   <input type="text" id="colorInput" class="input-field" placeholder="色名またはカラーコード">
   <button onclick="generateColorText()" class="btn">生成</button>
   <div id="result" class="result"></div>
+</div>
+
+<!-- 画像を挿入 -->
+<div class="image-container">
+  <img src="example.jpg" alt="画像の説明">
 </div>
 
 <script>
