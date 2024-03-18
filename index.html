@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML文字列置換</title>
+<title>原神の色文字を簡単に作れるサイト</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -47,6 +47,7 @@
 </style>
 </head>
 <body>
+  <h1 style="text-align: center;">原神の色文字を簡単に作れるサイト</h1>
 <div class="container">
   <h2 class="input-label">色名またはカラーコード<br>（カラーコードの場合は # をつけてください）</h2>
   <input type="text" id="colorInput" class="input-field" placeholder="色名またはカラーコード">
@@ -56,7 +57,7 @@
 
 <script>
 function replaceColor() {
-  var htmlString = "<ͣolor=#カラーコード>色文字</ͣolor>";
+  var htmlString = "<ͣolor=#カラーコード>text</ͣolor>";
   var colorInput = document.getElementById("colorInput").value;
   var newColorCode;
 
