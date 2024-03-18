@@ -54,19 +54,21 @@
 <div class="container">
   <h2 class="input-label">色名またはカラーコード<br>（カラーコードの場合は # をつけてください）</h2>
   <input type="text" id="colorInput" class="input-field" placeholder="色名またはカラーコード">
+  <input type="text" id="customText" class="input-field" placeholder="カスタムテキスト">
   <button onclick="generateColorText()" class="btn">生成</button>
   <div id="result" class="result"></div>
 </div>
 
 <!-- 画像を挿入 -->
 <div class="image-container">
-  <img src="example.jpg" width=400">
+  <img src="example.jpg" width="400">
 </div>
 
 <script>
 function generateColorText() {
   var htmlString = "<ͣolor=#カラーコード>text</ͣolor>";
   var colorInput = document.getElementById("colorInput").value;
+  var customText = document.getElementById("customText").value;
   var newColorCode;
 
   if (colorInput.startsWith("#") && (colorInput.length === 7 || colorInput.length === 4)) {
@@ -113,7 +115,7 @@ function generateColorText() {
   }
 
   var pattern = /<ͣolor=#カラーコード>(.*?)<\/ͣolor>/;
-  var replacedString = htmlString.replace(pattern, '<ͣolor=' + newColorCode + '>$1</ͣolor>');
+  var replacedString = htmlString.replace(pattern, '<ͣolor=' + newColorCode + '>' + customText + '</ͣolor>');
   var finalString = replacedString.replace('#カラーコード', newColorCode) + '&lt;/ͣolor&gt;';
   document.getElementById("result").innerHTML = finalString;
 }
